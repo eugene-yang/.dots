@@ -6,20 +6,20 @@ echo "source ~/.dots/.profile" >> ~/"$1"
 
 BASEDIR=$(dirname "$0")
 
-if [ ! -f "$BASEDIR"/.bashgit ]; then
+if [ ! -f ~/.dots/.bashgit ]; then
 	echo "===Installing bashgit==="
     curl -o ~/.dots/.bashgit https://raw.githubusercontent.com/oyvindstegard/bashgit/master/.bashgit
     . ~/.dots/.bashgit
     git config --global bashgit.showremote true
 fi
 
-if [ ! -f "$BASEDIR"/.vim_runtime ]; then
+if [ ! -f ~/.dots/.vim_runtime ]; then
 	echo "===Installing vim extensions==="
-	git clone https://github.com/amix/vimrc.git "$BASEDIR"/.vim_runtime
-	ln -s "$BASEDIR"/.vim_runtime ~/.vim_runtime
+	git clone https://github.com/amix/vimrc.git ~/.dots/.vim_runtime
+	ln -s ~/.dots/.vim_runtime ~/.vim_runtime
 	sh ~/.vim_runtime/install_basic_vimrc.sh
 	echo "" >> ~/.vimrc
-	echo "# add by dots installation by eugene" >> ~/.vimrc
+	echo "\" add by dots installation by eugene" >> ~/.vimrc
 	echo "set number" >> ~/.vimrc
 fi
 
