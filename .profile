@@ -2,8 +2,6 @@ export PS1="[\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]]\n\[\033[36;1m\]\u\[\033[
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-BASEDIR=$(dirname "$0")
-
 if [ ! -f ~/.dots/.bashgit ]; then
     mkdir ~/.dots
     curl -o ~/.dots/.bashgit https://raw.githubusercontent.com/oyvindstegard/bashgit/master/.bashgit
