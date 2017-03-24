@@ -12,7 +12,7 @@ if [ -f ~/.dots/.bashgit ]; then
     git config --global bashgit.showremote true
 fi
 
-alias ls='ls -GFh'
+alias ls='ls -GFh --color'
 alias ll='ls -l'
 alias la='ls -al'
 
