@@ -20,7 +20,8 @@ if [ ! -f ~/.dots/.vim_runtime ]; then
 	sh ~/.vim_runtime/install_basic_vimrc.sh
 	echo "" >> ~/.vimrc
 	echo "\" add by dots installation by eugene" >> ~/.vimrc
-	echo "set number" >> ~/.vimrc
+	echo "source ~/.dot/vimSetting.vim" >> ~/.vimrc
+	# echo "set number" >> ~/.vimrc
 fi
 
 git config --global user.name "Eugene Yang"
