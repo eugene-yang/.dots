@@ -2,7 +2,7 @@ echo "===Start Install Dots Configs==="
 echo "User bash config file: " $1
 echo "" >> ~/"$1"
 echo "# added by dots installation by eugene" >> ~/"$1"
-echo "source ~/.dots/.profile" >> ~/"$1" 
+echo "source ~/.dots/.profile" >> ~/"$1"
 
 BASEDIR=$(dirname "$0")
 
@@ -20,7 +20,7 @@ if [ ! -f ~/.dots/.vim_runtime ]; then
 	sh ~/.vim_runtime/install_basic_vimrc.sh
 	echo "" >> ~/.vimrc
 	echo "\" add by dots installation by eugene" >> ~/.vimrc
-	echo "source ~/.dot/vimSetting.vim" >> ~/.vimrc
+	echo "source ~/.dots/vimSetting.vim" >> ~/.vimrc
 	# echo "set number" >> ~/.vimrc
 fi
 
