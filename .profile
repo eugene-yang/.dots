@@ -18,3 +18,6 @@ alias la='ls -al'
 
 # Custome commands
 alias gitpage-watch='jekyll serve --watch'
+
+# Custome functions
+bc(){ python -c "print("$1")"; }
