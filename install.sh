@@ -32,5 +32,8 @@ fi
 git config --global user.name "Eugene Yang"
 git config --global user.email "eugene2528@gmail.com"
 
+echo "[include]" >> ~/.gitconfig
+echo "    path = $BASEDIR/git.config" >> ~/.gitconfig
+
 echo "===Sorucing the config file==="
 source ~/"$1"
