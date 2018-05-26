@@ -12,9 +12,13 @@ if [ -f ~/.dots/.bashgit ]; then
     git config --global bashgit.showremote true
 fi
 
-alias ls='ls -GFh --color'
+alias ls='ls -GFh'
 alias ll='ls -l'
 alias la='ls -al'
+alias l='ls'
+alias tmux='tmux -f ~/.dots/tmux.config'
+
+alias ipython='ipython --profile=eugene'
 
 # Custome commands
 alias gitpage-watch='jekyll serve --watch'

@@ -24,6 +24,11 @@ if [ ! -f ~/.dots/.vim_runtime ]; then
 	# echo "set number" >> ~/.vimrc
 fi
 
+if hash ipython 2>/dev/null; then
+	echo "===IPython exists, linking profile==="
+	ln -s ~/.dots/profile_eugene ~/.ipython/profile_eugene
+fi
+
 git config --global user.name "Eugene Yang"
 git config --global user.email "eugene2528@gmail.com"
 
