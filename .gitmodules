@@ -1,0 +1,6 @@
+[submodule "tmux_files/plugins/tpm"]
+	path = tmux_files/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "vim_runtime"]
+	path = vim_runtime
+	url = https://github.com/amix/vimrc

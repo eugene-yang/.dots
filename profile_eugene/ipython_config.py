@@ -35,7 +35,8 @@ c.InteractiveShellApp.exec_lines = [
     'import numpy as np',
     'import json, pickle',
     'from pathlib import Path',
-    'import pyperclip as cb'
+    'import pyperclip as cb',
+    'from scipy.sparse import load_npz'
 ]
 
 ## A list of dotted module names of IPython extensions to load.

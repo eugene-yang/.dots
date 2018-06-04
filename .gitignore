@@ -1,2 +1,3 @@
 .bashgit
-.vim_runtime/
+vim_plugged
+*.sqlite
