@@ -27,17 +27,23 @@
 
 ## List of files to run at IPython startup.
 #c.InteractiveShellApp.exec_files = []
+import inspect, os
+absp = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+c.InteractiveShellApp.exec_files = [ absp+'/tools.py']
 
 ## lines of code to run at IPython startup.
 #c.InteractiveShellApp.exec_lines = []
+"""
 c.InteractiveShellApp.exec_lines = [
     'import pandas as pd',
     'import numpy as np',
     'import json, pickle',
     'from pathlib import Path',
-    'import pyperclip as cb',
+    'import pyperclip',
+    'cc = pyperclip.copy'
+    'cl = lambda x: cc(In[x])',
     'from scipy.sparse import load_npz'
-]
+]"""
 
 ## A list of dotted module names of IPython extensions to load.
 #c.InteractiveShellApp.extensions = []

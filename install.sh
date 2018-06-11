@@ -19,10 +19,6 @@ if [ ! -f ~/.dots/.vim_runtime ]; then
 	ln -s ~/.dots/vim_runtime ~/.vim_runtime
 	sh ~/.vim_runtime/install_awesome_vimrc.sh
 	ln -s ~/.dots/vimSetting.vim ~/.dots/vim_runtime/my_configs.vim
-	# echo "" >> ~/.vimrc
-	# echo "\" add by dots installation by eugene" >> ~/.vimrc
-	# echo "source ~/.dots/vimSetting.vim" >> ~/.vimrc
-	# echo "set number" >> ~/.vimrc
 fi
 
 # tmux settings
