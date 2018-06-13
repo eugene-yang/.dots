@@ -16,7 +16,9 @@ alias ls='ls -GFh'
 alias ll='ls -l'
 alias la='ls -al'
 alias l='ls'
-alias tmux='tmux -f ~/.dots/tmux.config'
+
+# for ptt
+alias ptt='ssh bbsu@ptt.cc'
 
 alias ipython='ipython --profile=eugene'
 alias pjson='python -m json.tool'
