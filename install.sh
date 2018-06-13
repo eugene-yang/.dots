@@ -23,6 +23,8 @@ fi
 
 # tmux settings
 ln -s ~/.dots/tmux_files ~/.tmux
+ln -s ~/.dots/tmux_files/.tmux.conf ~
+ln -s ~/.dots/tmux_files/.tmux.conf.local ~
 
 # ipython profile
 if hash ipython 2>/dev/null; then
