@@ -141,7 +141,7 @@ c.InteractiveShellApp.exec_lines = [
 
 ## If a command or file is given via the command-line, e.g. 'ipython foo.py',
 #  start an interactive shell after executing the file or command.
-#c.TerminalIPythonApp.force_interact = False
+c.TerminalIPythonApp.force_interact = False
 
 ## Class to use to instantiate the TerminalInteractiveShell object. Useful for
 #  custom Frontends
@@ -180,6 +180,14 @@ c.InteractiveShellApp.exec_lines = [
 
 ## The part of the banner to be printed before the profile
 #c.InteractiveShell.banner1 = "Python 3.6.4 |Anaconda, Inc.| (default, Jan 16 2018, 12:04:33) \nType 'copyright', 'credits' or 'license' for more information\nIPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.\n"
+c.InteractiveShell.banner1 = """Python 3.6.4 | Anaconda, Inc.
+     ______                                 _  _
+    / ____/_  ______ ____  ____  ___     _ | || |
+   / __/ / / / / __ `/ _ \/ __ \/ _ \   (_)/ // /
+  / /___/ /_/ / /_/ /  __/ / / /  __/  _  / // /
+ /_____/\__,_/\__, /\___/_/ /_/\___/  (_)/_//_/
+             /____/                     /_//_/
+"""
 
 ## The part of the banner to be printed after the profile
 #c.InteractiveShell.banner2 = ''
@@ -288,7 +296,7 @@ c.InteractiveShellApp.exec_lines = [
 ## Set to confirm when you try to exit IPython with an EOF (Control-D in Unix,
 #  Control-Z/Enter in Windows). By typing 'exit' or 'quit', you can force a
 #  direct exit without any confirmation.
-#c.TerminalInteractiveShell.confirm_exit = True
+c.TerminalInteractiveShell.confirm_exit = True
 
 ## Options for displaying tab completions, 'column', 'multicolumn', and
 #  'readlinelike'. These options are for `prompt_toolkit`, see `prompt_toolkit`
@@ -323,10 +331,15 @@ c.InteractiveShellApp.exec_lines = [
 
 ## Enable mouse support in the prompt (Note: prevents selecting text with the
 #  mouse)
-#c.TerminalInteractiveShell.mouse_support = False
+c.TerminalInteractiveShell.mouse_support = False
 
 ## Class used to generate Prompt token for prompt_toolkit
-#c.TerminalInteractiveShell.prompts_class = 'IPython.terminal.prompts.Prompts'
+c.TerminalInteractiveShell.prompts_class = 'IPython.terminal.prompts.Prompts'
+#try:
+#    from powerline.bindings.ipython.since_5 import PowerlinePrompts
+#    c.TerminalInteractiveShell.prompts_class = PowerlinePrompts
+#except:
+#    print("No powerline found!")
 
 ## Use `raw_input` for the REPL, without completion and prompt colors.
 #
@@ -336,7 +349,7 @@ c.InteractiveShellApp.exec_lines = [
 #
 #  This mode default to `True` if the `IPY_TEST_SIMPLE_PROMPT` environment
 #  variable is set, or the current terminal is not a tty.
-#c.TerminalInteractiveShell.simple_prompt = False
+c.TerminalInteractiveShell.simple_prompt = False
 
 ## Number of line at the bottom of the screen to reserve for the completion menu
 #c.TerminalInteractiveShell.space_for_menu = 6
@@ -351,7 +364,7 @@ c.InteractiveShellApp.exec_lines = [
 ## Use 24bit colors instead of 256 colors in prompt highlighting. If your
 #  terminal supports true color, the following command should print 'TRUECOLOR'
 #  in orange: printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
-#c.TerminalInteractiveShell.true_color = False
+c.TerminalInteractiveShell.true_color = True
 
 #------------------------------------------------------------------------------
 # HistoryAccessor(HistoryAccessorBase) configuration

@@ -2,6 +2,8 @@ export PS1="[\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]]\n\[\033[36;1m\]\u\[\033[
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
+# export PATH="~/.dots/bin:~/bin:$PATH"
+
 if [ ! -f ~/.dots/.bashgit ]; then
     mkdir ~/.dots
     curl -o ~/.dots/.bashgit https://raw.githubusercontent.com/oyvindstegard/bashgit/master/.bashgit

@@ -7,17 +7,17 @@ cc = pyperclip.copy
 
 from scipy.sparse import load_npz
 
-class dummy(object):
+class cl(object):
     def __getitem__(self, item):
         l = In[:-1][ item ]
         if isinstance( l, list ):
-            cc( "\n".join(l) )
+            pyperclip.copy( "\n".join(l) )
         else:
-            cc( l )
+            pyperclip.copy( l )
 
     @property
     def r(self):
         c = pyperclip.paste()
         print( c )
         return exec(c)
-cl = dummy()
+cl = cl()

@@ -14,12 +14,15 @@ if [ ! -f ~/.dots/.bashgit ]; then
 fi
 
 # vim settings
-if [ ! -f ~/.dots/.vim_runtime ]; then
-	echo "===Installing vim extensions==="
-	ln -s ~/.dots/vim_runtime ~/.vim_runtime
-	sh ~/.vim_runtime/install_awesome_vimrc.sh
-	ln -s ~/.dots/vimSetting.vim ~/.dots/vim_runtime/my_configs.vim
-fi
+echo "===Installing vim extensions==="
+ln -s ~/.dots/vim_runtime ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+ln -s ~/.dots/vimSetting.vim ~/.dots/vim_runtime/my_configs.vim
+
+# powerline fonts
+cd powerline_fonts
+./install.sh
+cd ../
 
 # tmux settings
 ln -s ~/.dots/tmux_files ~/.tmux

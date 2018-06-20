@@ -1,3 +1,5 @@
 .bashgit
 vim_plugged
 *.sqlite
+tmux_files/plugins/
+tmux_files/resurrect

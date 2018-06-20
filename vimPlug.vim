@@ -39,6 +39,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'airblade/vim-gitgutter'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'ahw/vim-pbcopy'
+Plug 'tpope/vim-obsession'
 
 " Initialize plugin system
 call plug#end()
