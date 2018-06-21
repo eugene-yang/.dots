@@ -3,29 +3,11 @@ bind-key c command-prompt -p "window name:" "new-window -n '%%'"
 bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
 
-# tpm
-set -g @tpm_plugins 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-yank'
-set -g @tpm_plugins 'tmux-plugins/tmux-cpu'
-set -g @continuum-restore 'on'
-run '~/.tmux/plugins/tpm/tpm'
-
 # my settings
 set -g allow-rename off
 
 # tmux+vim
 set -g focus-events on
 
-# vim-style copy
-#setw -g mode-keys vi  
-#set -g status-keys vi
-#bind-key P run 'reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer'
-#bind -n C-P run 'reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer'
-#bind-key -Tcopy-mode-vi 'v' send -X begin-selection
-#bind-key -Tcopy-mode-vi 'y' send -X copy-selection
-#bind-key -Tcopy-mode-vi Escape send -X cancel
-#bind-key -Tcopy-mode-vi V send -X rectangle-toggle
-
+# remote 
+# bind-key -n C-a send-prefix
