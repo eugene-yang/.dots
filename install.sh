@@ -6,12 +6,6 @@ echo "source ~/.dots/.profile" >> ~/"$1"
 
 BASEDIR=$(dirname "$0")
 
-if [ ! -f ~/.dots/.bashgit ]; then
-	echo "===Installing bashgit==="
-    curl -o ~/.dots/.bashgit https://raw.githubusercontent.com/oyvindstegard/bashgit/master/.bashgit
-    . ~/.dots/.bashgit
-    git config --global bashgit.showremote true
-fi
 
 # vim settings
 echo "===Installing vim extensions==="
