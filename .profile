@@ -32,6 +32,7 @@ alias pbar='python ~/.dots/python_cli/pbar.py'
 
 # Custome commands
 alias gitpage-watch='jekyll serve --watch'
+alias get-server-usage='echo "getting server usage... waiting..."; ~/.dots/get-server-usage.sh 2>/dev/null'
 
 # Custome functions
 bc(){ python -c "print("$1")"; }
