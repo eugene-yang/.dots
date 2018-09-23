@@ -7,8 +7,8 @@ tmux_conf_theme_status_right_bg='#080808,#894a0b,#e4e4e4' # dark gray, red, whit
 # set -gu prefix2
 # unbind C-a
 unbind C-b
-set -g prefix C-z
-bind C-z send-prefix
+set -g prefix C-n
+bind C-n send-prefix
 
 # move status line to top
 set -g status-position top

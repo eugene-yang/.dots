@@ -3,7 +3,6 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
-source-file ~/.tmux/tmux.config.mine
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
@@ -283,4 +282,5 @@ if-shell 'test -n "$SSH_CLIENT"' \
 # move status line to top
 #set -g status-position top
 
+# source-file ~/.tmux/tmux.config.mine
 
