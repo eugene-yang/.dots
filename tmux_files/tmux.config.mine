@@ -1,7 +1,9 @@
 # for asking new window name
-bind-key c command-prompt -p "window name:" "new-window -n '%%'"
+bind c command-prompt -p "window name:" "new-window -n '%%'"
+bind R command-prompt -p ssh: "new-window -n %1 'ssh %1'" 
 bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
+bind a command-prompt -p "To #:" "swap-window -t %%" 
 
 # my settings
 set -g allow-rename off
