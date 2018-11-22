@@ -2,11 +2,15 @@
 source ~/.dots/vim_plugins/plug.vim
 source ~/.dots/vimPlug.vim
 
+filetype on
 set nu
 set autoread
 set mouse=a
 set clipboard=unnamed
 set autoindent noexpandtab tabstop=4 shiftwidth=4
+set expandtab
+
+let g:pymode_python = 'python3'
 
 " system copy for mac
 nmap '' :.w !pbcopy<CR><CR>
