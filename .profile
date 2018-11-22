@@ -16,7 +16,8 @@ if [[ "$unamestr" == 'Linux' ]]; then
 elif [[ "$unamestr" == 'FreeBSD' ]]; then
 	alias ls='ls -GFh'
 elif [[ "$unamestr" == 'Darwin' ]]; then
-	alias ls='ls -GFh'
+	# alias ls='ls -GFh'
+    alias ls='gls -GFh --group-directories-first --color=auto'
 fi
 
 alias ll='ls -l'
