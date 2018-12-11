@@ -14,11 +14,13 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 ln -s ~/.dots/vimSetting.vim ~/.dots/vim_runtime/my_configs.vim
 
 # powerline fonts
+echo "==Install Powerline fonts==="
 cd powerline_fonts
 ./install.sh
 cd ../
 
 # tmux settings
+echo "===Linking tmux settings==="
 ln -s ~/.dots/tmux_files ~/.tmux
 ln -s ~/.dots/tmux_files/.tmux.conf ~
 ln -s ~/.dots/tmux_files/.tmux.conf.local ~
@@ -27,11 +29,16 @@ ln -s ~/.dots/tmux_files/.tmux.conf.local ~
 if hash ipython 2>/dev/null; then
 	echo "===IPython exists, linking profile==="
 	ln -s ~/.dots/profile_eugene ~/.ipython/profile_eugene
+    echo "===Make sure essential packages are installed==="
+    conda install numpy scipy pandas
+    pip install pyperclip
 fi
 
+echo "===Setting my own git name and email==="
 git config --global user.name "Eugene Yang"
 git config --global user.email "eugene2528@gmail.com"
 
+echo "===And git settings==="
 echo "[include]" >> ~/.gitconfig
 echo "    path = $BASEDIR/.dots/git.config" >> ~/.gitconfig
 
