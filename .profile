@@ -36,3 +36,5 @@ alias gitpage-watch='jekyll serve --watch'
 
 # Custome functions
 bc(){ python -c "print("$1")"; }
+pane-name(){ printf '\033]2;%s\033\\' $1; }
+alias pn='pane-name'

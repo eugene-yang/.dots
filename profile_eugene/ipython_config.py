@@ -180,6 +180,7 @@ c.TerminalIPythonApp.force_interact = False
 
 ## The part of the banner to be printed before the profile
 #c.InteractiveShell.banner1 = "Python 3.6.4 |Anaconda, Inc.| (default, Jan 16 2018, 12:04:33) \nType 'copyright', 'credits' or 'license' for more information\nIPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.\n"
+import socket
 c.InteractiveShell.banner1 = """Python 3.6.4 | Anaconda, Inc.
      ______                                 _  _
     / ____/_  ______ ____  ____  ___     _ | || |
@@ -187,7 +188,8 @@ c.InteractiveShell.banner1 = """Python 3.6.4 | Anaconda, Inc.
   / /___/ /_/ / /_/ /  __/ / / /  __/  _  / // /
  /_____/\__,_/\__, /\___/_/ /_/\___/  (_)/_//_/
              /____/                     /_//_/
-"""
+You are on machine [%s], happy working :))
+"""%socket.gethostname()
 
 ## The part of the banner to be printed after the profile
 #c.InteractiveShell.banner2 = ''

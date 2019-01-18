@@ -1,15 +1,20 @@
 # for asking new window name
 bind c command-prompt -p "(new-window)" "new-window -n '%%'"
-bind R command-prompt -p "(new-ssh-window)" "new-window -n %1 'ssh %1'" 
+bind R command-prompt -p "(new-ssh-window)" "new-window -n %1 \"ssh %1\"" 
 # bind | split-window -h -c "#{pane_current_path}"
 # bind - split-window -v -c "#{pane_current_path}"
 bind a command-prompt -p "To #:" "swap-window -t %%" 
+bind X confirm-before -p "kill-window #W? (y/n)" kill-window
 
 # my settings
 set -g allow-rename off
 
 # tmux+vim
 set -g focus-events on
+
+# toggle pane title 
+set -g pane-border-format " #P: #T "
+bind b run-shell "if [[ `tmux show-options -w | grep 'pane-border-status.*bottom'` ]]; then toggle=off; else export toggle=bottom; fi; tmux set-option -w pane-border-status \$toggle &> /dev/null"
 
 # remote 
 # bind-key -n C-a send-prefix
