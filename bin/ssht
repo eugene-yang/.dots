@@ -1,0 +1,15 @@
+isin()[[ $2 =~ (^|[[:space:]])$1($|[[:space:]]) ]]
+
+# ssht for each machines
+
+_nsf_machines_="devram0 devram1 devram2 devram3 devram4 devram5 devtty0 devtty1 devtty2 devtty3 devtty4 devtty5 devtty6 devtty7 devtty8 devtty9 devtty10 devtty11 devtty12 devtty13 devtty14 devtty15 devtty16 devtty17 devtty18 devtty19 devtty20 devtty21 devtty22"
+
+
+if isin $1 "$_nsf_machines_" ; then
+    # just can't figure out how to make it load the config file correctly, so fall back to ssh
+	ssh $1 -F ~/.ssh/config -t "~/local/bin/tmux a" || ssh $1 -F ~/.ssh/config
+else
+	ssh $1 -F ~/.ssh/config -t "tmux a || tmux"
+fi
+
+

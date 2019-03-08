@@ -2,7 +2,7 @@ export PS1="[\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]]\n\[\033[36;1m\]\u\[\033[
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-# export PATH="~/.dots/bin:~/bin:$PATH"
+export PATH="~/.dots/bin:~/bin:$PATH"
 
 # GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
@@ -31,6 +31,9 @@ alias ipython='ipython --profile=eugene'
 alias pjson='python -m json.tool'
 alias pbar='python ~/.dots/python_cli/pbar.py'
 
+alias mlustre='sudo sshfs ey120@devtty0:/lustre /lustre -F ~/.ssh/config -o allow_other,defer_permissions,reconnect,ServerAliveInterval=15,ServerAliveCountMax=3'
+alias umlustre='sudo umount -f /lustre'
+
 # Custome commands
 alias gitpage-watch='jekyll serve --watch'
 
@@ -38,3 +41,7 @@ alias gitpage-watch='jekyll serve --watch'
 bc(){ python -c "print("$1")"; }
 pane-name(){ printf '\033]2;%s\033\\' $1; }
 alias pn='pane-name'
+
+# isin()[[ " $2 " =~ " $1 " ]]
+isin()[[ $2 =~ (^|[[:space:]])$1($|[[:space:]]) ]]
+

@@ -1,6 +1,6 @@
 # for asking new window name
 bind c command-prompt -p "(new-window)" "new-window -n '%%'"
-bind R command-prompt -p "(new-ssh-window)" "new-window -n %1 \"ssh %1\"" 
+bind R command-prompt -p "(new-ssh-window)" "new-window -n %1 \"~/.dots/bin/ssht %1\"" 
 # bind | split-window -h -c "#{pane_current_path}"
 # bind - split-window -v -c "#{pane_current_path}"
 bind a command-prompt -p "To #:" "swap-window -t %%" 
