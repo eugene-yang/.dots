@@ -27,6 +27,7 @@ alias l='ls'
 # for ptt
 alias ptt='ssh bbsu@ptt.cc'
 
+alias python=python3
 alias ipython='ipython --profile=eugene'
 alias pjson='python -m json.tool'
 alias pbar='python ~/.dots/python_cli/pbar.py'

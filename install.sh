@@ -26,13 +26,7 @@ ln -s ~/.dots/tmux_files/.tmux.conf ~
 ln -s ~/.dots/tmux_files/.tmux.conf.local ~
 
 # ipython profile
-if hash ipython 2>/dev/null; then
-	echo "===IPython exists, linking profile==="
-	ln -s ~/.dots/profile_eugene ~/.ipython/profile_eugene
-    echo "===Make sure essential packages are installed==="
-    conda install numpy scipy pandas
-    pip install pyperclip
-fi
+sh ~/.dots/install_pythonenv.sh
 
 echo "===Setting my own git name and email==="
 git config --global user.name "Eugene Yang"
