@@ -48,6 +48,13 @@ c.InteractiveShellApp.exec_lines = [
 ## A list of dotted module names of IPython extensions to load.
 #c.InteractiveShellApp.extensions = []
 
+c.InteractiveShellApp.extensions = ['autoreload']
+try:
+    import rpy2
+    c.InteractiveShellApp.extensions.append('rpy2.ipython')
+except ImportError:
+    pass
+
 ## dotted module name of an IPython extension to load.
 #c.InteractiveShellApp.extra_extension = ''
 
@@ -180,16 +187,21 @@ c.TerminalIPythonApp.force_interact = False
 
 ## The part of the banner to be printed before the profile
 #c.InteractiveShell.banner1 = "Python 3.6.4 |Anaconda, Inc.| (default, Jan 16 2018, 12:04:33) \nType 'copyright', 'credits' or 'license' for more information\nIPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.\n"
-import socket
-c.InteractiveShell.banner1 = """Python 3.7.1 | Anaconda, Inc.
+import socket, os, sys
+c.InteractiveShell.banner1 = """{version}
      ______                                 _  _
     / ____/_  ______ ____  ____  ___     _ | || |
    / __/ / / / / __ `/ _ \/ __ \/ _ \   (_)/ // /
   / /___/ /_/ / /_/ /  __/ / / /  __/  _  / // /
  /_____/\__,_/\__, /\___/_/ /_/\___/  (_)/_//_/
              /____/                     /_//_/
-You are on machine [%s], happy working :))
-"""%socket.gethostname()
+
+You are on machine [{machine}] under env [{env}], happy working :))
+""".format(
+    version = sys.version,
+    machine = socket.gethostname(),
+    env = os.environ['CONDA_DEFAULT_ENV']
+)
 
 ## The part of the banner to be printed after the profile
 #c.InteractiveShell.banner2 = ''

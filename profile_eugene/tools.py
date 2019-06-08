@@ -8,6 +8,13 @@ cc = pyperclip.copy
 
 from scipy.sparse import load_npz
 
+try:
+    from rpy2.robjects.packages import importr
+except ImportError:
+    pass
+
+
+
 class cl(object):
     def __getitem__(self, item):
         l = In[:-1][ item ]
