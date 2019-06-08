@@ -8,6 +8,8 @@ _nsf_machines_="devram0 devram1 devram2 devram3 devram4 devram5 devtty0 devtty1 
 if isin $1 "$_nsf_machines_" ; then
     # just can't figure out how to make it load the config file correctly, so fall back to ssh
 	ssh $1 -F ~/.ssh/config -t "~/local/bin/tmux a" || ssh $1 -F ~/.ssh/config
+elif [ $1 = "cubicle" ] ; then
+	ssh $1 -F ~/.ssh/config -t "/usr/local/bin/tmux a" || ssh $1 -F ~/.ssh/config    
 else
 	ssh $1 -F ~/.ssh/config -t "tmux a || tmux"
 fi
