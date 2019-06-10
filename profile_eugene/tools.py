@@ -7,13 +7,13 @@ from pathlib import Path
 try:
     import pyperclip
     cc = pyperclip.copy
-        class cl(object):
-            def __getitem__(self, item):
-            l = In[:-1][ item ]
-            if isinstance( l, list ):
-                pyperclip.copy( "\n".join(l) )
-            else:
-                pyperclip.copy( l )
+    class cl(object):
+        def __getitem__(self, item):
+        l = In[:-1][ item ]
+        if isinstance( l, list ):
+            pyperclip.copy( "\n".join(l) )
+        else:
+            pyperclip.copy( l )
 
         @property
         def r(self):
