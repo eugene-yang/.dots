@@ -12,7 +12,7 @@ source ~/.dots/.bash-git-prompt/gitprompt.sh
 
 unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
-	alias ls='ls -GFh --color=auto'
+	alias ls='ls -GFh --color=auto --group-directories-first'
 elif [[ "$unamestr" == 'FreeBSD' ]]; then
 	alias ls='ls -GFh'
 elif [[ "$unamestr" == 'Darwin' ]]; then
