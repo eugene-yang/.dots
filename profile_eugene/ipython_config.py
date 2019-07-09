@@ -268,7 +268,7 @@ You are on machine [{machine}] under env [{env}], happy working :))
     python_version = sys.version.replace("\n", ""),
     conda_version = conda_v,
     machine = socket.gethostname(),
-    env = os.environ['CONDA_DEFAULT_ENV']
+    env = os.environ['CONDA_DEFAULT_ENV'] if 'CONDA_DEFAULT_ENV' in os.environ else "?"
 )
 
 ## The part of the banner to be printed after the profile
