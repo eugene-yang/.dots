@@ -4,6 +4,8 @@ import json, pickle
 import itertools
 from pathlib import Path
 
+import gzip
+
 try:
     import pyperclip
     cc = pyperclip.copy
