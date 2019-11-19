@@ -41,7 +41,9 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'ahw/vim-pbcopy'
 Plug 'tpope/vim-obsession'
 
+" language linting
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'anntzer/vim-cython'
 
 " Initialize plugin system
 call plug#end()

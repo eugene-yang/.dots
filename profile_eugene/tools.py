@@ -7,6 +7,11 @@ from pathlib import Path
 import gzip
 
 try:
+    from tqdm import tqdm
+except ImportError:
+    print("=== Not importing tqdm ===")
+
+try:
     import pyperclip
     cc = pyperclip.copy
     class cl(object):
@@ -24,7 +29,7 @@ try:
             return exec(c)
     cl = cl()
 except ImportError:
-    print("=== Not loading pyperclip")
+    print("=== Not loading pyperclip ===")
 
 from scipy.sparse import load_npz
 
