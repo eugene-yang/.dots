@@ -8,6 +8,7 @@ import gzip
 
 try:
     from tqdm import tqdm
+    tqdm.pandas()
 except ImportError:
     print("=== Not importing tqdm ===")
 
