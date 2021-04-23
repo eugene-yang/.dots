@@ -20,8 +20,8 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     alias ls='gls -GFh --group-directories-first --color=auto'
 fi
 
-alias ll='ls -l'
-alias la='ls -al'
+alias ll='ls -lX'
+alias la='ls -alX'
 alias l='ls'
 
 # for ptt
