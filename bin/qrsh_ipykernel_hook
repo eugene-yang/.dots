@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+import json
+import sys
+
+import subprocess
+import sys
+import logging
+
+
+client_hook, connection_file = sys.argv[1:]
+config = json.load(open(connection_file))
+ports = [
+    config[n]
+    for n in ["control_port", "shell_port", "stdin_port", "hb_port", "iopub_port"]
+]
+
+kernel_start = f"{client_hook} /home/hltcoe/eyang/.conda/envs/pretrain-wfaiss/bin/python3 -m ipykernel_launcher -f {connection_file}"
+
+
+connect = 'qrsh -N ipkprox -q gpu.q@@dgx -l h_rt=400:00:00,mem_free=100G,num_proc=4,gpu=1 -now no -cwd ' + kernel_start
+proc = subprocess.Popen(connect.split(), stdin=sys.stdin, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+try:
+    forwarding_procs = []
+    forwarding = False
+    for line in proc.stdout:
+        line = line.decode()
+        if not forwarding and line.startswith("r"):
+            remote_server = line.strip()
+            for p in ports:
+                print(f"forwarding port {p} from server {remote_server}")
+                forwarding_procs.append( subprocess.Popen(f"ssh -N -L {p}:localhost:{p} {remote_server}".split(), stderr=subprocess.PIPE) )
+        else:
+            print(line, end="")
+except Exception as e:
+    logging.error(repr(e))
+finally:
+    for p in forwarding_procs:
+        print(f"Terminate port forwarding process {p}")
+        p.terminate()
+
