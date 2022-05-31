@@ -37,8 +37,8 @@ override_git_prompt_colors() {
   ## GIT_PROMPT_COMMAND_FAIL="${Red}✘-_LAST_COMMAND_STATE_ "    # indicator if the last command returned with an exit code of other than 0
 
   GIT_PROMPT_COMMAND_OK="${Green}✔"    # indicator if the last command returned with an exit code of 0
-  # GIT_PROMPT_COMMAND_FAIL="${Red}✘-_LAST_COMMAND_STATE_"    # indicator if the last command returned with an exit code of other than 0
-  GIT_PROMPT_COMMAND_FAIL="${Red}✘"    # indicator if the last command returned with an exit code of other than 0
+  GIT_PROMPT_COMMAND_FAIL="${Red}✘-_LAST_COMMAND_STATE_"    # indicator if the last command returned with an exit code of other than 0
+  # GIT_PROMPT_COMMAND_FAIL="${Red}✘"    # indicator if the last command returned with an exit code of other than 0
 
   ## template for displaying the current virtual environment
   ## use the placeholder _VIRTUALENV_ will be replaced with 
@@ -66,7 +66,7 @@ override_git_prompt_colors() {
   # To specify multiple branches, use
   #   shopt -s extglob
   #   GIT_PROMPT_MASTER_BRANCHES='@(master|production)'
-  # GIT_PROMPT_MASTER_BRANCHES="master"
+  GIT_PROMPT_MASTER_BRANCHES="@(master|main|production)"
 }
 
 reload_git_prompt_colors "Custom"

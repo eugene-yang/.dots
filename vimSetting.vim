@@ -11,6 +11,7 @@ set autoindent noexpandtab tabstop=4 shiftwidth=4
 set expandtab
 
 let g:pymode_python = 'python3'
+let g:go_version_warning = 0
 
 " system copy for mac
 nmap '' :.w !pbcopy<CR><CR>

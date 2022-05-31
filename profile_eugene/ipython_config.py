@@ -627,6 +627,7 @@ c.TerminalInteractiveShell.true_color = True
 ## Experimental: Use Jedi to generate autocompletions. Default to True if jedi is
 #  installed
 #c.Completer.use_jedi = True
+c.Completer.use_jedi = False
 
 #------------------------------------------------------------------------------
 # IPCompleter(Completer) configuration

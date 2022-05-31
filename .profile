@@ -7,8 +7,12 @@ export PATH="~/.dots/bin:~/bin:$PATH"
 # GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
 GIT_PROMPT_THEME_FILE=~/.dots/Custom.bgptemplate
+GIT_PROMPT_FETCH_REMOTE_STATUS=0
+GIT_PROMPT_SHOW_UNTRACKED_FILES=no
+GIT_PROMPT_IGNORE_SUBMODULES=1
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 source ~/.dots/.bash-git-prompt/gitprompt.sh
+alias gp=git_prompt_toggle
 
 unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then

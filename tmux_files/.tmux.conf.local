@@ -275,8 +275,8 @@ set -g prefix C-b
 bind C-b send-prefix
 set -g status-position bottom
 
-#if-shell 'test -n "$SSH_CLIENT"' \
-#	 'source-file ~/.tmux/.tmux.conf.remote'
+if-shell 'test -n "$SSH_CLIENT"' \
+	 'source-file ~/.tmux/.tmux.conf.remote'
 
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
