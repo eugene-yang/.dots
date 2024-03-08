@@ -7,7 +7,18 @@ from pathlib import Path
 import gzip
 
 try:
-    from tqdm import tqdm
+    import rich
+    print = rich.print
+    from rich import pretty
+    pretty.install()
+    from rich import traceback
+    traceback.install(show_locals=False)
+    print("=== Using Rich ===")
+except ImportError:
+    pass
+
+try:
+    from tqdm.auto import tqdm
     tqdm.pandas()
 except ImportError:
     print("=== Not importing tqdm ===")
@@ -32,10 +43,14 @@ try:
 except ImportError:
     print("=== Not loading pyperclip ===")
 
-from scipy.sparse import load_npz
+try:
+    import ir_datasets as irds
+except ImportError:
+    pass
 
 try:
-    from rpy2.robjects.packages import importr
+    import ir_measures as irms
+    from ir_measures import *
 except ImportError:
     pass
 
